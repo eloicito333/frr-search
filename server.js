@@ -5,7 +5,9 @@ const path = require('path');
 const Corrosion = require('corrosion');
 const express = require('express');
 const app = express();
-const bodyParser = require("body-parser");
+const dotenv = require('dotenv');
+
+dotenv.config()
 
 // you are free to use self-signed certificates here, if you plan to route through an SSL-providing reverse proxy.
 const ssl = {
@@ -44,4 +46,4 @@ app.post(/\/get\/*/, (req, res) => {
 
 server.on('upgrade', (clientRequest, clientSocket, clientHead) => proxy.upgrade(clientRequest, clientSocket, clientHead));
 
-server.listen(8000);
+server.listen(process.env.PORT || 8000);

@@ -11,8 +11,8 @@ dotenv.config()
 
 // you are free to use self-signed certificates here, if you plan to route through an SSL-providing reverse proxy.
 const ssl = {
-    key: fs.readFileSync(path.join(__dirname, '/ssl.key')),
-    cert: fs.readFileSync(path.join(__dirname, '/ssl.cert')),
+    key: fs.readFileSync(path.join(__dirname, '/ssl/server.key')),
+    cert: fs.readFileSync(path.join(__dirname, '/ssl/server.crt')),
 };
 const server = https.createServer(ssl, app);
 const proxy = new Corrosion({

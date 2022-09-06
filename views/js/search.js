@@ -1,4 +1,4 @@
-if (!sessionStorage.getItem('url')) window.location.replace('https://jolly-crostata-142b41.netlify.app/')
+if (!sessionStorage.getItem('url')) window.location.replace('https://frr-search-production.up.railway.app/')
 
 const iframe = document.getElementById('iframe-your-search');
 const formUrl = document.getElementById('search-form');

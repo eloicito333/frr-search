@@ -7,5 +7,5 @@ form.addEventListener('submit', event => {
     if (sessionStorage.getItem('url')) sessionStorage.removeItem('url')
     sessionStorage.setItem('url', formUrl.value)
 
-    window.location.replace('https://localhost:8000/search')
+    window.location.replace('https://jolly-crostata-142b41.netlify.app/search')
 })

@@ -1,5 +1,5 @@
 // https here is necesary for some features to work, even if this is going to be behind an SSL-providing reverse proxy.
-const http = require('http');
+const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const Corrosion = require('corrosion');
@@ -10,11 +10,11 @@ const dotenv = require('dotenv');
 dotenv.config()
 
 // you are free to use self-signed certificates here, if you plan to route through an SSL-providing reverse proxy.
-/* const ssl = {
+const ssl = {
     key: fs.readFileSync(path.join(__dirname, '/ssl.key')),
     cert: fs.readFileSync(path.join(__dirname, '/ssl.cert')),
-}; */
-const server = http.createServer(app);
+};
+const server = https.createServer(app);
 const proxy = new Corrosion({
     codec: 'xor', // apply basic xor encryption to url parameters in an effort to evade filters. Optional.
     prefix: '/get/' // specify the endpoint (prefix). Optional.

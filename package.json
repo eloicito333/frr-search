@@ -16,9 +16,6 @@
     "dependencies": {
         "corrosion": "^1.0.0",
         "dotenv": "^16.0.2",
-        "express": "^4.18.1",
-        "fs": "^0.0.1-security",
-        "http": "^0.0.1-security",
-        "path": "^0.12.7"
+        "express": "^4.18.1"
     }
 }

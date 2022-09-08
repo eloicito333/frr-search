@@ -11,7 +11,7 @@ const insertAfter = (newNode, existingNode) => {
 const searchOnIframe = (url) => {
     const hiddenFormElement = document.createElement('form');
     hiddenFormElement.setAttribute('id', 'hidden-form');
-    hiddenFormElement.setAttribute('action', 'http://www.beepbox.es/');
+    hiddenFormElement.setAttribute('action', '//www.beepbox.es/');
     hiddenFormElement.setAttribute('target', 'your-search');
     hiddenFormElement.setAttribute('method', 'POST');
 

@@ -7,5 +7,5 @@ form.addEventListener('submit', event => {
     if (sessionStorage.getItem('url')) sessionStorage.removeItem('url')
     sessionStorage.setItem('url', formUrl.value)
 
-    window.location.replace('https://frr-search-production.up.railway.app/search/')
+    window.location.replace('https://frr-search.up.railway.app/search/')
 })

@@ -1,4 +1,4 @@
-if (!sessionStorage.getItem('url')) window.location.replace('https://frr-search-production.up.railway.app/')
+if (!sessionStorage.getItem('url')) window.location.replace('https://frr-search.up.railway.app/')
 
 const iframe = document.getElementById('iframe-your-search');
 const formUrl = document.getElementById('search-form');
@@ -11,7 +11,7 @@ const insertAfter = (newNode, existingNode) => {
 const searchOnIframe = (url) => {
     const hiddenFormElement = document.createElement('form');
     hiddenFormElement.setAttribute('id', 'hidden-form');
-    hiddenFormElement.setAttribute('action', '//www.beepbox.es/');
+    hiddenFormElement.setAttribute('action', 'https://www.google.com/search?q=%http://frr-search.up.railway.app&btnI=Im+Feeling+Lucky');
     hiddenFormElement.setAttribute('target', 'your-search');
     hiddenFormElement.setAttribute('method', 'POST');
 

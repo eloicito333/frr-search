@@ -14,12 +14,7 @@ dotenv.config()
 }; */
 /* const server = https.createServer(ssl, app);
  */
-const proxy = new Corrosion({
-    codec: 'xor', // apply basic xor encryption to url parameters in an effort to evade filters. Optional.
-    prefix: '/get/' // specify the endpoint (prefix). Optional.
-});
 
-proxy.bundleScripts();
 
 app.use(express.static(path.join(__dirname, '/views')));
 
@@ -34,15 +29,5 @@ app.get('/search', (req, res) => {
 app.get('/feedback', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/feedback.html'));
 })
-
-app.get(/\/get\/*/, (req, res) => {
-    return proxy.request(req, res);
-});
-
-app.post(/\/get\/*/, (req, res) => {
-    return proxy.request(req, res);
-});
-
-app.on('upgrade', (clientRequest, clientSocket, clientHead) => proxy.upgrade(clientRequest, clientSocket, clientHead));
 
 app.listen(process.env.PORT || 8000);

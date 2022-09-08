@@ -12,7 +12,7 @@ const searchOnIframe = (url) => {
 
     const hiddenFormElement = document.createElement('form');
     hiddenFormElement.setAttribute('id', 'hidden-form');
-    hiddenFormElement.setAttribute('action', '//www.google.ie/gwt/x?u=http://frr-search.up.railway.app');
+    hiddenFormElement.setAttribute('action', '//gateways-frr-search.up.railway.app/get/gateway');
     hiddenFormElement.setAttribute('target', 'your-search');
     hiddenFormElement.setAttribute('method', 'POST');
 

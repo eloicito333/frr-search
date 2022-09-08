@@ -3,8 +3,6 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
-const http = require('http')
-const enforce = require('express-sslify')
 
 dotenv.config()
 
@@ -13,9 +11,7 @@ dotenv.config()
     key: fs.readFileSync(path.join(__dirname, '/ssl/server.key')),
     cert: fs.readFileSync(path.join(__dirname, '/ssl/server.cert')),
 }; */
-const server = http.createServer(app);
 
-app.use(enforce.HTTPS())
 
 app.use(express.static(path.join(__dirname, '/views')));
 
@@ -31,4 +27,4 @@ app.get('/feedback', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/feedback.html'));
 })
 
-server.listen(process.env.PORT || 8000);
+app.listen(process.env.PORT || 8000);

@@ -56,5 +56,3 @@ app.post(/\/get\/*/, (req, res) => {
 app.on('upgrade', (clientRequest, clientSocket, clientHead) => proxy.upgrade(clientRequest, clientSocket, clientHead));
 
 app.listen(process.env.PORT || 8080, () => console.log(`Server running at port: ${process.env.PORT}`));
-
-require('./keep-alive')

@@ -1,4 +1,4 @@
-const fetch = require('node-fetch')
+import * as fetch from 'node-fetch';
 
 setInterval(async() => {
     await fetch('https://frr-search.herokuapp.com/');

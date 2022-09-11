@@ -1,4 +1,4 @@
-if (!sessionStorage.getItem('url')) window.location.replace('https://frr-search.up.railway.app/')
+if (!sessionStorage.getItem('url')) window.location.replace('http://frr-search.herokuapp.com/')
 
 const iframe = document.getElementById('iframe-your-search');
 const formUrl = document.getElementById('search-form');
@@ -12,7 +12,7 @@ const searchOnIframe = (url) => {
 
     const hiddenFormElement = document.createElement('form');
     hiddenFormElement.setAttribute('id', 'hidden-form');
-    hiddenFormElement.setAttribute('action', 'https://gateways-frr-search.up.railway.app/get/gateway');
+    hiddenFormElement.setAttribute('action', 'http://frr-search.herokuapp.com/get/gateway');
     hiddenFormElement.setAttribute('target', 'your-search');
     hiddenFormElement.setAttribute('method', 'POST');
 

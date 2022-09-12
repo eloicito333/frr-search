@@ -16,6 +16,12 @@ body {
 }
 
 nav {
+    position: fixed !important;
+    width: 100%;
+    z-index: 500;
+}
+
+nav {
     background: #171c24;
     display: flex;
     flex-wrap: wrap;
@@ -136,7 +142,15 @@ nav .search-icon {
 }
 
 main {
-    text-align: center;
+    min-width: 100vw;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    position: relative;
+    top: 70px;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    padding: 10px;
 }
 
 #iframe-your-search {

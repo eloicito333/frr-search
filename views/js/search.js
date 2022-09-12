@@ -1,4 +1,4 @@
-if (!sessionStorage.getItem('url')) window.location.replace('http://frr-search.herokuapp.com/')
+if (!sessionStorage.getItem('frr-search@form-action')) window.location.replace(`http://${window.location.host}`)
 
 const iframe = document.getElementById('iframe-your-search');
 const formUrl = document.getElementById('search-form');
@@ -12,7 +12,7 @@ const searchOnIframe = (url) => {
 
     const hiddenFormElement = document.createElement('form');
     hiddenFormElement.setAttribute('id', 'hidden-form');
-    hiddenFormElement.setAttribute('action', 'http://frr-search.herokuapp.com/get/gateway');
+    hiddenFormElement.setAttribute('action', `http://${window.location.host}/get/gateway/`);
     hiddenFormElement.setAttribute('target', 'your-search');
     hiddenFormElement.setAttribute('method', 'POST');
 
@@ -30,11 +30,30 @@ const searchOnIframe = (url) => {
     hiddenForm.remove();
 }
 
-searchOnIframe(sessionStorage.getItem('url'))
-sessionStorage.removeItem('url')
+if (sessionStorage.getItem('frr-search@form-action') === 'gateway' && sessionStorage.getItem('frr-search@url')) {
+    searchOnIframe(sessionStorage.getItem('frr-search@url'))
+    sessionStorage.removeItem('frr-search@url')
+    sessionStorage.removeItem('frr-search@form-action')
 
-formUrl.addEventListener('submit', () => {
+} else if (sessionStorage.getItem('frr-search@form-action') === 'chromium') {
+    iframe.src = 'https://replit.com/@EloiBuil2/Chromium-unblocked-1?v=1&embed=true'
+    sessionStorage.removeItem('frr-search@form-action')
+
+} else if (sessionStorage.getItem('frr-search@form-action') === 'firefox') {
+    iframe.src = 'https://replit.com/@EloiBuil2/firefox-unblocked-1?v=1&embed=true'
+    sessionStorage.removeItem('frr-search@form-action')
+
+} else window.location.replace(`http://${window.location.host}`)
+
+formUrl.addEventListener('submit', (event) => {
     event.preventDefault()
     searchOnIframe(inputUrl.value)
     inputUrl.value = ''
+
+    items.classList.remove("active");
+    menuBtn.classList.remove("hide");
+    openSearchBtn.classList.remove("hide");
+    cancelBtn.classList.remove("show");
+    form.classList.remove("active");
+    cancelBtn.style.color = "#ff3d00";
 })

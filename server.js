@@ -21,12 +21,13 @@ const denyHTTPS = (req, res, next) => {
 }
 
 app.use(denyHTTPS);
+app.use(helmet.frameguard({ action: 'SAMEORIGIN' }));
 app.use(express.static(path.join(__dirname, '/views')));
 
 const proxy = new Corrosion({
     codec: 'xor', // apply basic xor encryption to url parameters in an effort to evade filters. Optional.
     prefix: '/get/', // specify the endpoint (prefix). Optional.
-    title: 'Gataway',
+    title: 'Gateway',
     ssl: true
 });
 

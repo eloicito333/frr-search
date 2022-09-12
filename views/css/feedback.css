@@ -19,10 +19,18 @@ main {
     min-width: 100vw;
     min-height: calc(100vh - 70px);
     display: flex;
+    position: relative;
+    top: 70px;
     justify-content: center;
     align-items: center;
     flex-flow: column wrap;
     padding: 10px;
+}
+
+nav {
+    position: fixed !important;
+    width: 100%;
+    z-index: 500;
 }
 
 #form-div {

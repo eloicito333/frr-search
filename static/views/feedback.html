@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search teh web freely with the frr-search web unblocker">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="search, unblocker, web">
+    <meta name="author" content="*ebucu*">
+    <link rel="canonical" href="https://frr-search.herokuapp.com/">
+
+    <!-- Primary Meta Tags -->
+    <title>FrrSearch - Feedback</title>
+    <meta name="title" content="FrrSearch - Feedback">
+    <meta name="description" content="Search the web freely with the FrrSearch web unblocker. Safer than incognito mode.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frr-search.herokuapp.com/">
+    <meta property="og:title" content="FrrSearch - Web Unblocker">
+    <meta property="og:description" content="Search the web freely with the FrrSearch web unblocker. Safer than incognito mode.">
+    <meta property="og:image" content="https://i.postimg.cc/ZRw8KrkG/og-img.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://frr-search.herokuapp.com/">
+    <meta property="twitter:title" content="FrrSearch - Web Unblocker">
+    <meta property="twitter:description" content="Search the web freely with the FrrSearch web unblocker. Safer than incognito mode.">
+    <meta property="twitter:image" content="https://i.postimg.cc/ZRw8KrkG/og-img.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="icon" href="/views/assets/flying-bird-logo.png">
+    <link rel="stylesheet" href="/views/css/feedback.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('m_NLd4Ivpm-aCOYbB');
+        })();
+    </script>
+    <script src="/viewes/js/feedback.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <span class="fas fa-bars"></span>
+            </div>
+            <h1 class="logo">
+                <a href="/" style="all:inherit; cursor:pointer;">
+                FrrSearch
+                </a>
+            </h1>
+            <div class="nav-items">
+                <li><a href="/" name="Home">Home</a></li>
+                <li><a href="" mane="About" aria-disabled="true">About</a></li>
+                <li><a href="" name="Upgrade" aria-disabled="true">Upgrade</a></li>
+                <li><a href="" name="Contact" aria-disabled="true">Contact</a></li>
+                <li><a href="/feedback" name="Feedback">Feedback</a></li>
+            </div>
+            <div class="cancel-icon">
+                <span class="fas fa-times"></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="form-div">
+            <div id="title-div">
+                <h2>Feedback</h2>
+                <span>Help us to improve our page!</span>
+            </div>
+            <form class="form" id="feedback-form">
+
+                <p class="name">
+                    <label>
+                        <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H322.8c-3.1-8.8-3.7-18.4-1.4-27.8l15-60.1c2.8-11.3 8.6-21.5 16.8-29.7l40.3-40.3c-32.1-31-75.7-50.1-123.9-50.1H178.3zm435.5-68.3c-15.6-15.6-40.9-15.6-56.6 0l-29.4 29.4 71 71 29.4-29.4c15.6-15.6 15.6-40.9 0-56.6l-14.4-14.4zM375.9 417c-4.1 4.1-7 9.2-8.4 14.9l-15 60.1c-1.4 5.5 .2 11.2 4.2 15.2s9.7 5.6 15.2 4.2l60.1-15c5.6-1.4 10.8-4.3 14.9-8.4L576.1 358.7l-71-71L375.9 417z"/></svg>
+                    </label>
+                </p>
+
+                <p class="email">
+
+                    <label>
+                        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 128C0 92.65 28.65 64 64 64H448C483.3 64 512 92.65 512 128V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V128zM48 128V150.1L220.5 291.7C241.1 308.7 270.9 308.7 291.5 291.7L464 150.1V127.1C464 119.2 456.8 111.1 448 111.1H64C55.16 111.1 48 119.2 48 127.1L48 128zM48 212.2V384C48 392.8 55.16 400 64 400H448C456.8 400 464 392.8 464 384V212.2L322 328.8C283.6 360.3 228.4 360.3 189.1 328.8L48 212.2z"/></svg>
+                    </label>
+                </p>
+
+                <p class="subject">
+                    <label>
+                        <input name="subject" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Subject" id="subject" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M481 31C445.1-4.8 386.9-4.8 351 31l-15 15L322.9 33C294.8 4.9 249.2 4.9 221.1 33L135 119c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0L255 66.9c9.4-9.4 24.6-9.4 33.9 0L302.1 80 186.3 195.7 316.3 325.7 481 161c35.9-35.9 35.9-94.1 0-129.9zM293.7 348.3L163.7 218.3 99.5 282.5c-48 48-80.8 109.2-94.1 175.8l-5 25c-1.6 7.9 .9 16 6.6 21.7s13.8 8.1 21.7 6.6l25-5c66.6-13.3 127.8-46.1 175.8-94.1l64.2-64.2z"/></svg>
+                    </label>
+                </p>
+
+                <p class="text">
+                    <label>
+                        <textarea name="comment" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M447.1 0h-384c-35.25 0-64 28.75-64 63.1v287.1c0 35.25 28.75 63.1 64 63.1h96v83.98c0 9.836 11.02 15.55 19.12 9.7l124.9-93.68h144c35.25 0 64-28.75 64-63.1V63.1C511.1 28.75 483.2 0 447.1 0zM464 352c0 8.75-7.25 16-16 16h-160l-80 60v-60H64c-8.75 0-16-7.25-16-16V64c0-8.75 7.25-16 16-16h384c8.75 0 16 7.25 16 16V352z"/></svg>
+                    </label>
+                </p>
+
+
+                <div class="submit">
+                    <input type="submit" value="SEND" id="button-blue" />
+                    <div class="ease"></div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script>
+        const menuBtn = document.querySelector(".menu-icon span");
+        const cancelBtn = document.querySelector(".cancel-icon");
+        const items = document.querySelector(".nav-items");
+
+        menuBtn.onclick = () => {
+            items.classList.add("active");
+            menuBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+        }
+        cancelBtn.onclick = () => {
+            items.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            cancelBtn.classList.remove("show");
+            cancelBtn.style.color = "#ff3d00";
+        }
+    </script>
+</body>
+
+</html>

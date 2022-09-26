@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search teh web freely with the frr-search web unblocker">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="search, unblocker, web">
+    <meta name="author" content="*ebucu*">
+    <link rel="canonical" href="https://frr-search.herokuapp.com/">
+
+    <!-- Primary Meta Tags -->
+    <title>FrrSearch - Search</title>
+    <meta name="title" content="FrrSearch - Search">
+    <meta name="description" content="Search the web freely with the FrrSearch web unblocker. Safer than incognito mode.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frr-search.herokuapp.com/">
+    <meta property="og:title" content="FrrSearch - Web Unblocker">
+    <meta property="og:description" content="Search the web freely with the FrrSearch web unblocker. Safer than incognito mode.">
+    <meta property="og:image" content="https://i.postimg.cc/ZRw8KrkG/og-img.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://frr-search.herokuapp.com/">
+    <meta property="twitter:title" content="FrrSearch - Web Unblocker">
+    <meta property="twitter:description" content="Search the web freely with the FrrSearch web unblocker. Safer than incognito mode.">
+    <meta property="twitter:image" content="https://i.postimg.cc/ZRw8KrkG/og-img.png">
+
+    <script src="../uv/uv.bundle.js" defer></script>
+    <script src="../uv/uv.config.js" defer></script>
+    <script src="/views/js/search.js" defer></script>
+    <link rel="icon" href="/views/assets/flying-bird-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/views/css/search.css">
+
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <span class="fas fa-bars"></span>
+            </div>
+            <h1 class="logo">
+                <a href="/" style="all:inherit; cursor:pointer;">
+                FrrSearch
+                </a>
+            </h1>
+            <div class="nav-items">
+                <li><a href="/" name="Home">Home</a></li>
+                <li><a href="" mane="About" aria-disabled="true">About</a></li>
+                <li><a href="" name="Upgrade" aria-disabled="true">Upgrade</a></li>
+                <li><a href="" name="Contact" aria-disabled="true">Contact</a></li>
+                <li><a href="/feedback" name="Feedback">Feedback</a></li>
+            </div>
+            <div class="search-icon">
+                <span class="fas fa-search"></span>
+            </div>
+            <div class="cancel-icon">
+                <span class="fas fa-times"></span>
+            </div>
+            <form action="/get/gateway/" target="your-search" method="POST" id="search-form">
+                <input type="search" class="search-data" id="search-form-url" placeholder="Search the web freely" name="url" required>
+                <button type="submit" class="search-btn fas fa-search"></button>
+            </form>
+        </nav>
+    </header>
+    <main>
+        <div id="iframe-container">
+            <div id="loading-frame">
+                <div class="loading-frame-content">
+                    <div class="preloader">
+                        <div class="preloader__square"></div>
+                        <div class="preloader__square"></div>
+                        <div class="preloader__square"></div>
+                        <div class="preloader__square"></div>
+                    </div>
+                    <div class="status">Loading<span class="status__dot">.</span><span class="status__dot">.</span><span class="status__dot">.</span></div>
+                </div>
+            </div>
+            <iframe allowfullscreen="0" name="your-search" id="iframe-your-search">
+            <h5>Your browser doesn't support iframes</h5>
+            <p>Cange your browser and try again</p>
+          </iframe>
+        </div>
+    </main>
+    <script>
+        const menuBtn = document.querySelector(".menu-icon span");
+        const openSearchBtn = document.querySelector(".search-icon");
+        const cancelBtn = document.querySelector(".cancel-icon");
+        const items = document.querySelector(".nav-items");
+        const form = document.querySelector("#search-form");
+        menuBtn.onclick = () => {
+            items.classList.add("active");
+            menuBtn.classList.add("hide");
+            openSearchBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+        }
+        cancelBtn.onclick = () => {
+            items.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            openSearchBtn.classList.remove("hide");
+            cancelBtn.classList.remove("show");
+            form.classList.remove("active");
+            cancelBtn.style.color = "#ff3d00";
+        }
+        openSearchBtn.onclick = () => {
+            form.classList.add("active");
+            openSearchBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+        }
+    </script>
+</body>
+
+</html>

@@ -31,6 +31,7 @@ const GoogleAnalyticsSetUp = () => {
 }
 
 consentimentPopupAccemptBtn.addEventListener('click', () => {
+    if (getCookie('frrsearch@coockieConsentiment')) setCookie('frrsearch@coockieConsentiment', '', -1)
     setCookie('frrsearch@coockieConsentiment', coockieVersion, 60)
     consentimentPopup.close()
     GoogleAnalyticsSetUp()

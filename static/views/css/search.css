@@ -25,6 +25,29 @@ body {
     min-width: 100vw;
 }
 
+
+/* Start --> Scroll bar  */
+
+*::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+    ;
+}
+
+*::-webkit-scrollbar-thumb {
+    border: 2px solid #ff8585;
+    border-radius: 10px;
+    background-color: #f36262;
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-corner {
+    background: #e8e8e8;
+}
+
+
+/* End --> Scroll bar  */
+
 nav {
     position: fixed;
     width: 100%;

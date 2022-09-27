@@ -71,17 +71,6 @@ const searchOnIframe = (Url) => {
     })
 }
 
-/* const formatRelpIframe = () => {
-    const iframeContent = iframe.contentWindow
-    iframe.classList.add('relp')
-    iframe.addEventListener('load', (e) => {
-        console.log('load event')
-        iframeContent.document.querySelector("#main-content > div > div > div > div > div.css-8itwiz > div.css-lsneq1").click()
-        loadingFrame.classList.add('hide')
-
-    });
-} */
-
 iframeStateChangeController(iframe, () => {
         if (iframe.classList.contains('relp')) {
             const iframeContent = iframe.contentWindow

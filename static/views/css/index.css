@@ -12,6 +12,62 @@ body {
     min-height: 100vh;
 }
 
+
+/* Start --> Coockies and polocy privacy modal */
+
+#consentiment-popup {
+    /*  -webkit-animation: fadein 0.5s, fadeout 0.5s 0.5s;
+    animation: fadein 0.5s, fadeout 0.5s 0.5s; */
+    height: 200px;
+    min-width: 250px;
+    width: 100vw;
+    left: 0px;
+    right: 0px;
+    margin-left: -30px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    padding: 30px;
+    padding-top: 70px;
+    position: relative;
+    z-index: 1;
+    bottom: 0px;
+    font-size: 17px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+dialog:modal {
+    max-width: none !important;
+    max-height: none !important;
+    position: fixed;
+    top: calc(100vh - 200px) !important;
+}
+
+#consentiment-popup::backdrop {
+    background-color: rgba(255, 99, 99, 0.082) !important;
+}
+
+#consentiment-popup-buttons-container {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    right: 0px;
+}
+
+#consentiment-popup-button {
+    background-color: lightgreen;
+    padding: 10px;
+    border: none;
+}
+
+
+/* End --> Coockies and polocy privacy modal */
+
 main {
     min-width: 100vw;
     min-height: calc(100vh - 70px);

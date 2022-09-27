@@ -2,6 +2,47 @@ const form = document.getElementById('search-form')
 const formUrl = document.getElementById('search-form-url')
 const chromiumBtn = document.getElementById('launch-chromium-btn');
 const firefoxBtn = document.getElementById('launch-firefox-btn');
+const consentimentPopup = document.getElementById('consentiment-popup');
+const consentimentPopupAccemptBtn = document.getElementById('consentiment-popup-button');
+
+const coockieVersion = 'v1'
+
+const setCookie = (name, value, exdays) => {
+    exdays = exdays || 1;
+    let d = new Date();
+    d.setTime(d.getTime() + 1000 * 60 * 60 * 24 * exdays);
+    expires = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + value + "; " + expires;
+}
+
+const getCookie = (name) => {
+    let cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        let c = cookies[i].split('=');
+        if (c[0] == name) {
+            return c[1];
+        }
+    }
+    return undefined;
+}
+
+const GoogleAnalyticsSetUp = () => {
+    //google analytics set up code
+}
+
+consentimentPopupAccemptBtn.addEventListener('click', () => {
+    setCookie('frrsearch@coockieConsentiment', coockieVersion, 60)
+    consentimentPopup.close()
+    GoogleAnalyticsSetUp()
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (getCookie('frrsearch@coockieConsentiment') === "v1") {
+        GoogleAnalyticsSetUp();
+    } else {
+        consentimentPopup.showModal();
+    }
+})
 
 form.addEventListener('submit', event => {
     event.preventDefault()

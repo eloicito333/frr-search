@@ -32,19 +32,20 @@ const GoogleAnalyticsSetUp = () => {
 }
 
 consentimentPopupAccemptBtn.addEventListener('click', () => {
-    if (getCookie('frrsearch@coockieConsentiment')) setCookie('frrsearch@coockieConsentiment', '', -1)
-    setCookie('frrsearch@coockieConsentiment', coockieVersion, 60)
+    if (getCookie('frr-search@coockieConsentiment')) setCookie('frr-search@coockieConsentiment', '', -1)
+    setCookie('frr-search@coockieConsentiment', coockieVersion, 60)
     consentimentPopup.close()
     GoogleAnalyticsSetUp()
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (getCookie('frrsearch@coockieConsentiment') === "v1") {
+    if (getCookie('frr-search@coockieConsentiment') === "v1") {
         GoogleAnalyticsSetUp();
     } else {
         consentimentPopup.showModal();
     }
 })
+
 feedbackForm.addEventListener('submit', (event) => {
     const info = {
         name: nameInput.value,

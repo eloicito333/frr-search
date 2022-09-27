@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search teh web freely with the frr-search web unblocker">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="search, unblocker, web">
+    <meta name="author" content="*ebucu*">
+
+    <!-- Primary Meta Tags -->
+    <title>FrrSearch - Privacy Policy</title>
+    <meta name="title" content="FrrSearch - Privacy Policy">
+    <meta name="description" content="Search the web freely with the FrrSearch web unblocker. Safer than incognito mode.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frr-search.fly.dev/">
+    <meta property="og:title" content="FrrSearch - Web Unblocker">
+    <meta property="og:description" content="Search the web freely with the FrrSearch web unblocker. Safer than incognito mode.">
+    <meta property="og:image" content="https://i.postimg.cc/ZRw8KrkG/og-img.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://frr-search.fly.dev/">
+    <meta property="twitter:title" content="FrrSearch - Web Unblocker">
+    <meta property="twitter:description" content="Search the web freely with the FrrSearch web unblocker. Safer than incognito mode.">
+    <meta property="twitter:image" content="https://i.postimg.cc/ZRw8KrkG/og-img.png">
+
+    <link rel="icon" href="/views/assets/flying-bird-logo.png">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/views/css/privacy-policy.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <span class="fas fa-bars"></span>
+            </div>
+            <h1 class="logo">
+                <a href="/" style="all:inherit; cursor:pointer;">
+            FrrSearch
+            </a>
+            </h1>
+            <div class="nav-items">
+                <li><a href="/" name="Home">Home</a></li>
+                <li><a href="" mane="About" aria-disabled="true">About</a></li>
+                <li><a href="" name="Upgrade" aria-disabled="true">Upgrade</a></li>
+                <li><a href="" name="Contact" aria-disabled="true">Contact</a></li>
+                <li><a href="/feedback" name="Feedback">Feedback</a></li>
+            </div>
+            <div class="cancel-icon">
+                <span class="fas fa-times"></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <button class="soft-btn" onclick="history.back()"><i class="fa-regular fa-arrow-left"></i>Go Back</button>
+        <section>
+            <h2>Cookies advice</h2>
+            <p>This website uses cookies to personalize ads, as well as to analyze traffic and save data, in addition to third-party cookies.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Privacy policy</h2>
+            <p>This website uses the information given by the cookies to personalize ads, ti analyze traffic, and to save data.</p>
+            <br>
+            <p>The information you provide in this webside is not publoc for anybody. The personal information you enter when you send feedback is used to give structure to the email, as well as to get in contact with you if it is necessary for the improvement
+                of the webpage, but without spaming you emails.</p>
+        </section>
+    </main>
+    <script>
+        const menuBtn = document.querySelector(".menu-icon span");
+        const cancelBtn = document.querySelector(".cancel-icon");
+        const items = document.querySelector(".nav-items");
+
+        menuBtn.onclick = () => {
+            items.classList.add("active");
+            menuBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+        }
+        cancelBtn.onclick = () => {
+            items.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            cancelBtn.classList.remove("show");
+            cancelBtn.style.color = "#ff3d00";
+        }
+    </script>
+</body>
+
+</html>

@@ -112,12 +112,6 @@ main {
     flex-flow: column wrap;
 }
 
-nav {
-    position: fixed !important;
-    width: 100%;
-    z-index: 500;
-}
-
 #title-div {
     margin-bottom: 100px;
     display: flex;
@@ -278,6 +272,9 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 /* NavBar */
 
 nav {
+    position: fixed !important;
+    width: 100%;
+    z-index: 500;
     background: #171c24;
     display: flex;
     flex-wrap: wrap;

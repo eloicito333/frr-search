@@ -31,14 +31,14 @@ const GoogleAnalyticsSetUp = () => {
 }
 
 consentimentPopupAccemptBtn.addEventListener('click', () => {
-    if (getCookie('frrsearch@coockieConsentiment')) setCookie('frrsearch@coockieConsentiment', '', -1)
-    setCookie('frrsearch@coockieConsentiment', coockieVersion, 60)
+    if (getCookie('frr-search@coockieConsentiment')) setCookie('frr-search@coockieConsentiment', '', -1)
+    setCookie('frr-search@coockieConsentiment', coockieVersion, 60)
     consentimentPopup.close()
     GoogleAnalyticsSetUp()
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (getCookie('frrsearch@coockieConsentiment') === "v1") {
+    if (getCookie('frr-search@coockieConsentiment') === "v1") {
         GoogleAnalyticsSetUp();
     } else {
         consentimentPopup.showModal();
@@ -51,19 +51,19 @@ form.addEventListener('submit', event => {
     sessionStorage.setItem('frr-search@form-action', 'gateway')
     sessionStorage.setItem('frr-search@url', formUrl.value)
 
-    window.location.replace(`http://${window.location.host}/search/`)
+    window.location.replace(`${window.location.protocol}//${window.location.host}/search/`)
 })
 
 chromiumBtn.addEventListener('click', () => {
     sessionStorage.setItem('frr-search@form-action', 'chromium')
     if (sessionStorage.getItem('frr-search@url')) sessionStorage.removeItem('frr-search@url')
 
-    window.location.replace(`http://${window.location.host}/search/`)
+    window.location.replace(`${window.location.protocol}//${window.location.host}/search/`)
 })
 
 firefoxBtn.addEventListener('click', () => {
     sessionStorage.setItem('frr-search@form-action', 'firefox')
     if (sessionStorage.getItem('frr-search@url')) sessionStorage.removeItem('frr-search@url')
 
-    window.location.replace(`http://${window.location.host}/search/`)
+    window.location.replace(`${window.location.protocol}//${window.location.host}/search/`)
 })

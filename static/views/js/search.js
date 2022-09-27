@@ -1,4 +1,4 @@
-if (!sessionStorage.getItem('frr-search@form-action')) window.location.replace(`http://${window.location.host}`)
+if (!sessionStorage.getItem('frr-search@form-action')) window.location.replace(`${window.location.protocol}//${window.location.host}`)
 
 const iframe = document.getElementById('iframe-your-search');
 const loadingFrame = document.getElementById('loading-frame');
@@ -65,7 +65,7 @@ const searchOnIframe = (Url) => {
         if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
         else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
-        iframe.src = `//${window.location.host}${__uv$config.prefix}${__uv$config.encodeUrl(url)}`;
+        iframe.src = `${window.location.protocol}//${window.location.host}${__uv$config.prefix}${__uv$config.encodeUrl(url)}`;
         // ${window.location.protocol == "https:" ? "https://" : ""}
         // __uv$config.prefix + __uv$config.encodeUrl(url)
     })

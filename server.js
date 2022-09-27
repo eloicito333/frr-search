@@ -20,13 +20,13 @@ const sendHTML = (file, res) => {
     res.end();
 }
 
-const sendJS = (file, res) => {
+/* const sendJS = (file, res) => {
     console.log('send html fn')
     const jsData = fs.readFileSync(resolve(staticDir, file), 'utf-8')
     res.writeHead(200, { 'Content-Type': 'text/javascript' });
     res.write(jsData);
     res.end();
-}
+} */
 
 const fileRequest = (req, res) => {
     let url = req.url
@@ -37,8 +37,8 @@ const fileRequest = (req, res) => {
         sendHTML('search.html', res)
     } else if (url == '/feedback') {
         sendHTML('feedback.html', res)
-    } else if (url === '/search/sw.js') {
-        sendJS('uv/uv.sw.js', res)
+    } else if (url === '/privacy-policy') {
+        sendHTML('privacy-policy.html', res)
     } else {
         serve.serve(req, res)
         console.log('send with node-static')

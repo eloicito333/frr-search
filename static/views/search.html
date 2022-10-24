@@ -36,6 +36,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="/views/css/search.css">
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NMR32KJERH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NMR32KJERH');
+    </script>
+
 
 </head>
 
@@ -63,7 +76,7 @@
             <div class="cancel-icon">
                 <span class="fas fa-times"></span>
             </div>
-            <form action="/get/gateway/" target="your-search" method="POST" id="search-form">
+            <form id="search-form" autocomplete="off">
                 <input type="search" class="search-data" id="search-form-url" placeholder="Search the web freely" name="url" required>
                 <button type="submit" class="search-btn fas fa-search"></button>
             </form>

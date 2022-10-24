@@ -48,10 +48,6 @@ const iframeStateChangeController = (iframe, loadCallback, reloadCallback, chang
 
 // custom event end
 
-const handleIframeSearh = () => {
-
-}
-
 const isUrl = (val = '') => {
     if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
     return false;

@@ -14,9 +14,8 @@ const server = http.createServer();
 
 const sendHTML = (file, res) => {
     console.log('send html fn')
-    const htmlData = fs.readFileSync(resolve(viewsDir, file), 'utf-8')
     res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.write(htmlData);
+    res.write(fs.readFileSync(resolve(viewsDir, file), 'utf-8'));
     res.end();
 }
 

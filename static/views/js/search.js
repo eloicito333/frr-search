@@ -5,6 +5,7 @@ const loadingFrame = document.getElementById('loading-frame');
 const formUrl = document.getElementById('search-form');
 const inputUrl = document.getElementById('search-form-url');
 
+/* A constant that contains the URLs of the repls that are used to open the browsers. */
 const replitURLs = {
     chromium: "https://replit.com/@EloiBuil2/Chromium-unblocked-1?v=1&embed=true",
     firefox: "https://replit.com/@EloiBuil2/firefox-unblocked-1?v=1&embed=true"
@@ -12,7 +13,13 @@ const replitURLs = {
 
 //custom event listener --> iframe url change
 
-
+/**
+ * Controller for iframe to display unblocked pages
+ * @param {HTMLIFrameElement} iframe - The **iframe** that you want to aply this controlls
+ * @param {Function} loadCallback - function called when the frame **loads** a page
+ * @param {Function} [reloadCallback] - function called when the page is **reloaded** *(same url)*
+ * @param {Function} changedCallback - functiona called when the iframes **url changes**
+ */
 const iframeStateChangeController = (iframe, loadCallback, reloadCallback, changedCallback) => {
     if (!changedCallback) changedCallback = reloadCallback
     let lastDispatched = null;
@@ -53,6 +60,10 @@ const isUrl = (val = '') => {
     return false;
 };
 
+/**
+ * Searches the url on the iframe
+ * @param {string} Url - The url to search
+ */
 const searchOnIframe = (Url) => {
     window.navigator.serviceWorker.register('/sw.js', {
         scope: __uv$config.prefix
@@ -62,8 +73,6 @@ const searchOnIframe = (Url) => {
         else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
         iframe.src = `${window.location.protocol}//${window.location.host}${__uv$config.prefix}${__uv$config.encodeUrl(url)}`;
-        // ${window.location.protocol == "https:" ? "https://" : ""}
-        // __uv$config.prefix + __uv$config.encodeUrl(url)
     })
 }
 

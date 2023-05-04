@@ -34,12 +34,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="/views/css/index.css">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBRZCEEW7Y"></script>
-
 </head>
 
 <body>
+    <div id="popup-modal-coockies" class="popup-modal hidden">
+        <div class="popup-modal-content">
+            <img src="/views/assets/bitten-coockie.png">
+            <h4>Coockie and Privacy Policy</h4>
+            <p>This website uses cookies to personalize ads, as well as to analyze traffic and save data, in addition to third-party cookies.</br>"Accept" button you are accepting the <a href="/privacy-policy" target="_blank" title="privacy policy">PRIVACY POLICY</a>                and the use of cookies.</p>
+            <button id="consentiment-popup-button">ACCEPT</button>
+        </div>
+    </div>
     <header>
         <nav>
             <div class="menu-icon">
@@ -89,13 +94,6 @@
             </div>
         </div>
     </main>
-    <dialog id="consentiment-popup">
-        <h4>Coockie and Privacy Policy</h4>
-        <div id="consentiment-popup-buttons-container">
-            <button id="consentiment-popup-button">ACEPTAR</button>
-        </div>
-        <p>This website uses cookies to personalize ads, as well as to analyze traffic and save data, in addition to third-party cookies.</br>"Accept" button you are accepting the <a style="color: #d3d3d3;" href="/privacy-policy" target="_blank" title="privacy policy">PRIVACY POLICY</a>            and the use of cookies.</p>
-    </dialog>
     <script>
         const menuBtn = document.querySelector(".menu-icon span");
         const cancelBtn = document.querySelector(".cancel-icon");
